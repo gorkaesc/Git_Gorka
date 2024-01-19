@@ -1,0 +1,266 @@
+/* importación de Google fonts las cuales nos permiten introducir diferentes fuentes a las que tiene por defecto vscode */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Dosis:wght@200&family=Overpass:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Courgette&family=Dosis:wght@200&family=Overpass:wght@300&display=swap');
+
+/* establecemos reglas de estilo globales para todos los elementos
+eliminamos todos los amrgenes predeterminados al igual que todos los rellenos. 
+box-sizing hace que el tamaño total del elemento se mantiene constante, independientemente de los valores de relleno y borde.
+font-family nos va a permitir elegir que tipo de letra queremos aplicar a nuestro texto de la web.
+text-decoration Elimina la decoración de texto predeterminada*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
+
+/* aplica color de fondo a la página */
+body {
+    background-color: #e7d9b4;
+}
+
+/* ---header menu--- */
+/* se aplica ancho y alto al contenedor que está en la cabecera */
+.contenedorMenu {
+    width: 100%;
+    height: 90px;
+    background-color: #ffffff;
+    padding: 0px 20px;
+}
+
+.menu {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+
+/* display flex me permite establecer un método de visualización.
+float me permite especificar si un elemento debe estar a la izquierda, derecha o en ningún lado del contenedor al que pertenece */
+img {
+    display: flex;
+    width: 100px;
+    height: 90px;
+    float: left;
+}
+
+nav {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* en este caso display inline-flex me especifica que los ul hijos directos de nav se van a mostrar en línea con otros elementos y a la vez actuará como un contenedor flexible */
+nav>ul {
+    height: 100%;
+    display: inline-flex;
+    float: right;
+}
+
+nav ul li {
+    height: 100%;
+    list-style: none;
+    position: relative;
+    /* con esto le decimos que se va a relacionar con su padre*/
+}
+
+nav>ul>li>a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    color: black;
+    text-transform: uppercase;
+}
+
+nav>ul>li>a:hover {
+    transform: scale(1.1);
+    /*nos permite que al pasar el ratón por encima se haga una especie de zoom en las letras*/
+}
+
+/* SUBMENU */
+nav ul li ul {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    /* nos va a premitir colocar los elementos del ul en columna */
+    position: absolute;
+    /*va a dar el efecto de movimiento cuando se despliega el submenú*/
+    top: 90px;
+    transition: all 300ms ease;
+    /* ********* */
+    padding: 14px 0px;
+    opacity: 0;
+    background-color: rgba(192, 157, 59, 0.203);
+}
+
+nav ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 80px;
+    z-index: 100;
+}
+
+/* creamos el triangulito */
+nav ul li ul::before {
+    content: " ";
+    /* height: 0;
+    width: 0; */
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid rgba(192, 157, 59, 0.203);
+    position: absolute;
+    top: -12px;
+    left: 20px;
+}
+
+nav ul li ul li a {
+    display: inline-block;
+    line-height: 30px;
+    color: black;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+    padding-left: 20px;
+}
+
+nav ul li ul li a:hover {
+    padding-left: 30px;
+    /*con esto le daríamos como unnefecto al menú que al pasar por encima se desplace hacia un lado las letras*/
+}
+
+/* ---OFERTAS---*/
+h3 {
+    margin-top: 20px;
+    margin-left: 38%;
+    margin-right: 35%;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-family: 'Courgette', cursive;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Overpass', sans-serif;
+}
+
+.carousel-item img {
+    width: 80px;
+    height: 500px;
+    align-items: center;
+}
+
+/* ---PLANES--- */
+h4 {
+    font-family: 'Caveat', cursive;
+    font-family: 'Courgette', cursive;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Overpass', sans-serif;
+}
+
+.global {
+    max-width: 1200px;
+    margin: auto;
+    perspective: 1000px;
+    /* disponemos en rejas nuestras tarjetas mediante  
+    flex*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.contenedor {
+    /* aunque dispongamos de una organización felx pero vamos a poder colocar las tarjetas respecto a contenedor global con disposición grid, para colocar en filas y columnas las tarjetas  */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.contenedor .card {
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    /* se indica que va a tener borde pero va a ser transparente para de esta forma poder aplicar encima el gradiente */
+    border: 5px solid transparent;
+    /* aplicamos bordes con degradado a las tarjetas */
+    border-image: linear-gradient(to right, #afc7b9, #fac7b4, #fca89d) 1;
+    box-shadow: 10px 7px 5px grey;
+}
+
+
+.frente,
+.trasera {
+    /* hacemos la parte trasera de las tarjetas ocultas para que solo al pasar el ratón por encima se pueda ver */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.frente img,
+.trasera{
+    max-width: 100%; /* Ajustar el tamaño máximo de la imagen */
+    border-radius: 5px;
+}
+.frente h4,
+.trasera p {
+    margin: 10px 0; /* Añadir un poco de espacio alrededor del texto */
+}
+
+/* aplicamos una transfromación de un elemento al pasar el ratón por encima, en este casos erá sobre el eje y (horizontal) */
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+/* vamos a aplicar una transformación sobre el eje z ( profundidad) */
+.frente {
+    transform: translateZ(60px);
+
+}
+
+/* en este caso el transform va a dar un efecto que al igual que en la cara delantera va a hacer un efecto 3d, como si las letras estuvieran en 3d */
+.trasera {
+    transform: rotateY(180deg) translateZ(60px);
+    padding: 20px;
+}
+
+/* footer */
+.pie {
+    display: flex;
+    height: 150px;
+    background-color: #c3ad71;
+    align-items: center;
+    padding: 10px;
+}
+
+.redes img {
+    margin: 0 10px;
+    width: 20px;
+    height: 20px;
+}
+
+/* aplica al logo el efecto de estar girando como si fuera un disco */
+.pie .logo {
+    /* Se define una animación llamada rotate que dura 3 segundos (3s), tiene un modo de temporización lineal (linear), y se establece como infinita (infinite). La animación se aplicará a la propiedad transform: rotate. */
+    transform: rotate(280deg);
+    -webkit-animation: 3s rotate linear infinite;
+    animation: 3s rotate linear infinite;
+    /* -- */
+    /* Establece el punto de origen de la transformación en el centro del logotipo. Esto significa que el logotipo girará alrededor de su centro. */
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    /* -- */
+}
+
+/* Aquí se define la animación rotate mediante @keyframes. Comienza desde una rotación de 0 grados (from) y termina con una rotación de 360 grados (to). Esto crea una animación completa de rotación de 360 grados. */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

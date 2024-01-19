@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Dosis:wght@200&family=Overpass:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Courgette&family=Dosis:wght@200&family=Overpass:wght@300&display=swap');
+
+/* establecemos reglas de estilo globales para todos los elementos
+eliminamos todos los amrgenes predeterminados al igual que todos los rellenos. 
+box-sizing hace que el tamaño total del elemento se mantiene constante, independientemente de los valores de relleno y borde.
+font-family nos va a permitir elegir que tipo de letra queremos aplicar a nuestro texto de la web.
+text-decoration Elimina la decoración de texto predeterminada*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
+
+/* aplica color de fondo a la página */
+body {
+    background-color: #e7d9b4;
+}
+
+/* ---header menu--- */
+/* se aplica ancho y alto al contenedor que está en la cabecera */
+.contenedorMenu {
+    width: 100%;
+    height: 90px;
+    background-color: #ffffff;
+    padding: 0px 20px;
+}
+
+.menu {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+
+/* display flex me permite establecer un método de visualización.
+float me permite especificar si un elemento debe estar a la izquierda, derecha o en ningún lado del contenedor al que pertenece */
+img {
+    display: flex;
+    width: 100px;
+    height: 90px;
+    float: left;
+}
+
+nav {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* en este caso display inline-flex me especifica que los ul hijos directos de nav se van a mostrar en línea con otros elementos y a la vez actuará como un contenedor flexible */
+nav>ul {
+    height: 100%;
+    display: inline-flex;
+    float: right;
+}
+
+nav ul li {
+    height: 100%;
+    list-style: none;
+    position: relative;
+    /* con esto le decimos que se va a relacionar con su padre*/
+}
+
+nav>ul>li>a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    color: black;
+    text-transform: uppercase;
+}
+
+nav>ul>li>a:hover {
+    transform: scale(1.1);
+    /*nos permite que al pasar el ratón por encima se haga una especie de zoom en las letras*/
+}
+
+/* SUBMENU */
+nav ul li ul {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    /* nos va a premitir colocar los elementos del ul en columna */
+    position: absolute;
+    /*va a dar el efecto de movimiento cuando se despliega el submenú*/
+    top: 0px;
+    transition: all 300ms ease;
+    /* ********* */
+    padding: 14px 0px;
+    opacity: 0;
+    background-color: rgba(192, 157, 59, 0.203);
+}
+
+nav ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 80px;
+    z-index: 100;
+}
+
+/* creamos el triangulito */
+nav ul li ul::before {
+    content: " ";
+    /* height: 0;
+    width: 0; */
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid rgba(192, 157, 59, 0.203);
+    position: absolute;
+    top: -12px;
+    left: 20px;
+}
+
+nav ul li ul li a {
+    display: inline-block;
+    line-height: 30px;
+    color: black;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+    padding-left: 20px;
+}
+
+nav ul li ul li a:hover {
+    padding-left: 30px;
+    /*con esto le daríamos como unnefecto al menú que al pasar por encima se desplace hacia un lado las letras*/
+}
+
+/* ------OFERTAS DE AMÉRICA--------- */
+
+
+#titulo{
+    height: 80px;
+    background-color: #dac489;
+}
+h1{
+    text-align: center;
+    line-height: 80px;
+}
+
+.paises{
+    margin: 16px;
+    display:grid;
+    text-align: center;
+    grid-template-columns:auto auto  auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    /* justify-content: center; */
+}
+.paises div{
+
+    color: #ffffff;
+    /* margin: 15px; */
+    justify-content: center;
+    padding: 8px;
+    background-color: #887b58;
+    border-radius: 10px;
+    line-height: 40px;
+}
+
+#NY{
+    /* background: url(/imagenes/NY.jpg) center no-repeat; */
+    background-image: url(/imagenes/NY.jpg)  ;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* opacity: 0.8; */
+}
+#NY:hover,#LA:hover,#RJ:hover,#Toronto:hover,#CM:hover{
+    background-image: url(/imagenes/fondo.jpg);
+    color: black;
+}
+.paises p{
+    opacity: 0;
+}
+.paises #NY:hover p{
+    opacity: 1;
+}
+
+.paises #LA:hover p{
+    opacity: 1;
+}
+
+.paises #RJ:hover p{
+    opacity: 1;
+}
+
+.paises #Toronto:hover p{
+    opacity: 1;
+}
+
+.paises #CM:hover p{
+    opacity: 1;
+}
+
+
+#LA{
+    background-image: url(/imagenes/LA.webp)  ;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+#RJ{
+    background-image: url(/imagenes/RJ.webp)  ;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+#Toronto{
+    background-image: url(/imagenes/Toronto.jpg)  ;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+#CM{
+    background-image: url(/imagenes/CM.webp)  ;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+.pie{
+
+    margin-top: 76px;
+    height: 150px;
+    display: flex;
+    background-color: #dac489;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.pie li{
+    list-style: none;
+}
+
+.redes-sociales img{
+    height: 20px;
+    width: 20px;
+    margin: 10px;
+}
+
+.enlaces-rapidos a{
+    color: black;
+}
+

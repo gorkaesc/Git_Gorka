@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- menú -->
+    <header>
+        <div class="contenedorMenu">
+            <div class="menu">
+                <nav>
+                    <img src="imagenes/vuelochungo.png" alt="logo" class="logo">
+                    <ul>
+                        <li><a href="#">Planes</a>
+                            <ul>
+                                <li><a href="#">Parejas</a></li>
+                                <li><a href="#">familia</a></li>
+                                <li><a href="#">amigos</a></li>
+                                <li><a href="#">jubilados</a></li>
+                                <li><a href="#">viajes sorpresa</a></li>
+                                <li><a href="#">viajes indivisuales</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Registrate</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- ofertas (carrusel) -->
+    <h3>OFERTAS</h3>
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagenes/America.jpg" class="d-block w-100" alt="america" id="america">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>América</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/africa.jpg" class="d-block w-100" alt="africa" id="africa">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>África</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/asia.jpg" class="d-block w-100" alt="asia" id="asia">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Asia</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/europa.jpg" class="d-block w-100" alt="europa" id="europa">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Europa</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/oceania.jpg" class="d-block w-100" alt="oceania" id="oceania">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Oceanía</h1>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- servicios hacer tarjetas que se giren-->
+    <h3>Los mejores planes que tenemos para ti</h3>
+    <section class="global">
+
+        <div class="contenedor">
+            <div class="card gradiente">
+                <div class="frente">
+                    <h4>En pareja</h4>
+                    <img src="imagenes/pareja.jpg" alt="pareja">
+                </div>
+                <div class="trasera">
+                    <p>Los mejores planes para ti y tu pareja</p>
+                </div>
+            </div>
+
+            <div class="card gradiente">
+                <div class="frente">
+                    <h4>En familia</h4>
+                    <img src="imagenes/familia.webp" alt="familia">
+                </div>
+                <div class="trasera">
+                    <p>Disfruta de nuestros planes en familia, hechos a medida para ti.</p>
+                </div>
+            </div>
+
+            <div class="card gradiente">
+                <div class="frente">
+                    <h4>Con amigos</h4>
+                    <img src="imagenes/amigos.jpg" alt="amigos">
+                </div>
+                <div class="trasera">
+                    <p>Si lo que deseas es viajar con tus amigos, contamos con los mejores planes.</p>
+                </div>
+            </div>
+
+            <div class="card gradiente">
+                <div class="frente">
+                    <h4>Viajes Jubilados</h4>
+                    <img src="imagenes/jubilados.jpg" alt="jubilados">
+                </div>
+                <div class="trasera">
+                    <p>La edad no será algo que te pare para seguir conociendo el  mundo</p>
+                </div>
+            </div>
+
+            <div class="card gradiente">
+                <div class="frente">
+                    <h4>Viajes Sorpresa</h4>
+                    <img src="imagenes/sorpresa.jpg" alt="viajes sorpresa">
+                </div>
+                <div class="trasera">
+                    <p>Si te gusta que te sorprendan confía en nosotros para conocer nuevos lugares.</p>
+                </div>
+            </div>
+
+            <div class="card gradiente">
+                <div class="frente">
+                    <h4>viajes individuales</h4>
+                    <img src="imagenes/individual.jpg" alt="viajes individuales">
+                </div>
+                <div class="trasera">
+                    <p>Viajar solo puede ser tan divertido como hacerlo en grupo, por eso contamos con los mejores planes para ti.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- logo -->
+    <section>
+
+    </section>
+    <!-- pie de la página donde colocaremos las redes sociales -->
+    <footer class="pie">
+        <div class="logo">
+            <img src="imagenes/vuelochungo.png" alt="logo">
+        </div>
+        <div class="redes">
+            
+            <a href="https://www.facebook.com/ArgandaViajesofertas/" target="_blank"><img src="imagenes/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://www.instagram.com/viajesviajamor/" target="_blank"><img src="imagenes/instagram.png"
+                    alt="Instagram"></a>
+            <a href="https://twitter.com/" target="_blank"><img src="imagenes/twiiter.png" alt="Twitter"></a>
+            <a href="https://www.tiktok.com/@viajesnova?lang=es" target="_blank"><img src="imagenes/tik-tok.png"
+                    alt="TikTok"></a>
+        </div>
+
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script type="module" src="ciudades.js" ></script>
+</body>
+
+</html>
