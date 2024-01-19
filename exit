@@ -1,0 +1,13 @@
+[1mdiff --git a/PROYECTO/africa/africa.css b/PROYECTO/africa/africa.css[m
+[1mindex c447685..974bb58 100644[m
+[1m--- a/PROYECTO/africa/africa.css[m
+[1m+++ b/PROYECTO/africa/africa.css[m
+[36m@@ -17,7 +17,7 @@[m [mtext-decoration Elimina la decoración de texto predeterminada*/[m
+ /* aplica color de fondo a la página */[m
+ body {[m
+     background-color: #8ee2de;[m
+[31m-    color: purple;[m
+[32m+[m[41m    [m
+ }[m
+ [m
+ /* ---header menu--- */[m
