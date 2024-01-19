@@ -17,7 +17,6 @@ text-decoration Elimina la decoración de texto predeterminada*/
 /* aplica color de fondo a la página */
 body {
     background-color: #8ee2de;
-    color: purple;
 }
 
 /* ---header menu--- */
